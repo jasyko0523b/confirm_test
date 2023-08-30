@@ -1,9 +1,11 @@
+/* 全体中央寄せ */
 .inquiry {
     margin: 0 auto;
     display: flex;
     text-align: center;
 }
 
+/* 入力フォーム全体の幅 */
 .inquiry-form {
     margin: 0 auto;
     width: 70%;
@@ -13,13 +15,6 @@
     width: 100%;
 }
 
-.required::after {
-    content: "※";
-    color: #f00;
-    font-size: 1em;
-    margin-left: 0.3em;
-}
-
 .inquiry-form__item {
     text-align: left;
 }
@@ -27,6 +22,14 @@
 .inquiry-form__item--header {
     margin: 0 5% 0 0;
     width: 40%;
+}
+
+/* 必須項目 */
+.required::after {
+    content: "※";
+    color: #f00;
+    font-size: 1em;
+    margin-left: 0.3em;
 }
 
 .inquiry-form__item--input{
@@ -54,12 +57,26 @@
     margin: 0 10% 0 0;
 }
 
+.postcode--input {
+    display: flex;
+}
+.postcode--input label{
+    margin: auto 5%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.postcode--example {
+    margin: auto 7vw;
+}
+
 .inquiry-form__item--textarea {
     padding: 10px;
     width: 100%;
     height: 80px;
     border: 1px solid #ddd;
     border-radius: 3px;
+    resize: none;
 }
 
 .inquiry-form__button {

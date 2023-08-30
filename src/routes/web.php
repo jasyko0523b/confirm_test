@@ -15,3 +15,4 @@ use App\Http\Controllers\InquiryController;
 */
 
 Route::get('/', [InquiryController::class, 'index']);
+Route::post('/confirm', [InquiryController::class, 'confirm']);

@@ -1,0 +1,78 @@
+/* 全体中央寄せ */
+.confirm {
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+}
+
+/* 入力フォーム全体の幅 */
+.confirm-form {
+    margin: 0 auto;
+    width: max(50vw, 400px);
+}
+
+.confirm-form__table {
+    width: 100%;
+}
+
+.confirm-form__item {
+    text-align: left;
+    vertical-align: top;
+}
+
+.confirm-form__item--header {
+    margin: 0 5% 0 0;
+    padding: 10px;
+    width: 30vw;
+    height: 40px;
+}
+
+.confirm-form__item--input{
+    padding: 10px;
+    background-color: #fff;
+    width: 100%;
+    height: 40px;
+    border: none;
+}
+
+.confirm-form__item--textarea {
+    padding: 10px;
+    width: 100%;
+    height: 100px;
+    border: none;
+    background-color: #fff;
+    resize: none;
+}
+
+
+.confirm-form__item--input:hover,
+.confirm-form__item--textarea:hover {
+    cursor: text;
+}
+
+/*************
+ * ボタン群
+**************/
+.confirm-form__button--submit{
+    margin: 5%;
+    padding: 10px;
+    width: 20%;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.confirm-form__button--fix {
+    margin: 5%;
+    padding: 10px;
+    width: 20%;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background: lightgray;
+    color: #000;
+    cursor: pointer;
+}
