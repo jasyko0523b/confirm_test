@@ -1,0 +1,75 @@
+.inquiry {
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+}
+
+.inquiry-form {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.inquiry-form__table {
+    width: 100%;
+}
+
+.required::after {
+    content: "※";
+    color: #f00;
+    font-size: 1em;
+    margin-left: 0.3em;
+}
+
+.inquiry-form__item {
+    text-align: left;
+}
+
+.inquiry-form__item--header {
+    margin: 0 5% 0 0;
+    width: 40%;
+}
+
+.inquiry-form__item--input{
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.inquiry-form__item--example {
+    margin: 0 0 5% 0;
+    color: gray;
+}
+
+.inquiry-form__item--radio {
+    margin: 5% 0;
+    accent-color: #000;
+    inline-size: 2rem;
+    block-size: 2rem;
+    vertical-align: middle;
+}
+
+.inquiry-form__item--radio-label {
+    margin: 0 10% 0 0;
+}
+
+.inquiry-form__item--textarea {
+    padding: 10px;
+    width: 100%;
+    height: 80px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.inquiry-form__button {
+    margin: 5%;
+    padding: 10px;
+    width: 20%;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
