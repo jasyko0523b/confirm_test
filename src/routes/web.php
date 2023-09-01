@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InquiryController;
+use App\Http\Controllers\ManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,8 @@ use App\Http\Controllers\InquiryController;
 
 Route::get('/', [InquiryController::class, 'index']);
 Route::post('/confirm', [InquiryController::class, 'confirm']);
+Route::post('/thanks', [InquiryController::class, 'thanks']);
+
+Route::get('/management', [ManagementController::class, 'index']);
+Route::delete('/management/delete', [ManagementController::class, 'delete']);
+Route::get('/management/search', [ManagementController::class, 'search']);

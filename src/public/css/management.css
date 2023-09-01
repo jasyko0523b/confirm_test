@@ -1,0 +1,189 @@
+
+.management {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*****************
+ * 検索
+*****************/
+.search {
+    margin: 0 auto;
+    padding: 5%;
+    width: 90%;
+    border: 1px solid #000;
+}
+
+.search-form__table{
+    width: 100%;
+}
+
+.search-form__item {
+    margin: 5px;
+    text-align: left;
+}
+
+.search-form__item--header {
+    margin: 0 5% 0 0;
+    width: 40%;
+}
+
+.search-form__item--input {
+    padding: 5px;
+    width: 20vw;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.create_at__row{
+    width: 100%;
+}
+
+/**************
+ * カレンダーの余計な表示を消す
+ **************/
+
+.date__input::-webkit-datetime-edit-fields-wrapper {
+    position: relative;
+}
+
+.date__input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    padding: 0;
+    opacity: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 20vw;
+}
+
+.search-form__item--radio {
+    accent-color: #000;
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+    vertical-align: middle;
+}
+
+.search-form__item--radio-label {
+    margin: 0 5% 0 0;
+}
+
+
+/*****************
+ * 検索機能のボタン群
+ *****************/
+.search-form__button{
+    text-align: right;
+}
+
+.search-form__button--reset {
+    padding: 10px;
+    width: 100px;
+    height: 40px;
+    order: 1px solid gray;
+    border-radius: 3px;
+    background: lightgray;
+    color: #000;
+    cursor: pointer;
+}
+
+.search-form__button--submit {
+    padding: 10px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*****************
+ * 一覧機能
+*****************/
+.opinions{
+    margin: 10px;
+    text-align: center;
+}
+
+.opinions__table {
+    margin: auto;
+    text-align: left;
+    width: 90%;
+}
+
+.opinions__table--header {
+    border-bottom: 2px solid #000;
+    margin-left: 10px;
+}
+
+.opinions__table--item {
+    height: 40px;
+}
+.opinions__table--header.id,
+.opinions__table--item.id,
+.opinions__table--header.gender,
+.opinions__table--item.gender {
+    text-align: center;
+}
+
+.opinions__table--item.small {
+    width: 100px;
+}
+
+.opinion__button--delete {
+    width: 50px;
+    height: 20px;
+    border: none;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*************
+ * pagination
+ ************/
+.opinions__counter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.opinions__counter p {
+    text-align: left;
+    margin: auto 5%;
+    width: 100%;
+}
+
+nav {
+    margin: 0 5%;
+    width: 50%;
+    text-align: right;
+}
+
+.pagination {
+    display: inline-block;
+    text-align: center;
+}
+
+.page-item{
+    display: table-cell;
+    margin: 0;
+    width: 24px;
+    border: 1px solid #000;
+}
+
+.page-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.page-item.active {
+    background: #000;
+    color: #fff;
+    pointer-events: none;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+}

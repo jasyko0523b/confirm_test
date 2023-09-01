@@ -29,6 +29,21 @@
                     </div>
                 </td>
             </tr>
+            @if( $errors->has('sei') || $errors->has('mei'))
+            <tr>
+                <td></td>
+                <td>
+                    <div class="inquiry-form__item">
+                        <p class="inquiry-form__item--error">{{$errors->first('sei')}}</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="inquiry-form__item">
+                        <p class="inquiry-form__item--error">{{$errors->first('mei')}}</p>
+                    </div>
+                </td>
+            </tr>
+            @endif
             <tr>
                 <td></td>
                 <td>
@@ -61,10 +76,20 @@
                 </th>
                 <td colspan="2">
                     <div class="inquiry-form__item">
-                        <input class="inquiry-form__item--input" type="text" name="email" value="{{ old('email') }}"/>
+                        <input class="inquiry-form__item--input" type="text" name="email" autocomplete="email" value="{{ old('email') }}"/>
                     </div>
                 </td>
             </tr>
+            @if( $errors->has('email') )
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <div class="inquiry-form__item">
+                        <p class="inquiry-form__item--error">{{$errors->first('email')}}</p>
+                    </div>
+                </td>
+            </tr>
+            @endif
             <tr>
                 <td></td>
                 <td colspan="2">
@@ -79,11 +104,21 @@
                 </th>
                 <td colspan="2">
                     <div class="inquiry-form__item postcode--input">
-                        <label>〒</label>
-                        <input class="inquiry-form__item--input" type="text" name="postcode" value="{{ old('postcode') }}"/>
+                        <label for="postcode">〒</label>
+                        <input class="inquiry-form__item--input" type="text" name="postcode" id="postcode" value="{{ old('postcode') }}"/>
                     </div>
                 </td>
             </tr>
+            @if( $errors->has('postcode') )
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <div class="inquiry-form__item postcode--error">
+                        <p class="inquiry-form__item--error">{{$errors->first('postcode')}}</p>
+                    </div>
+                </td>
+            </tr>
+            @endif
             <tr>
                 <td></td>
                 <td colspan="2">
@@ -98,10 +133,20 @@
                 </th>
                 <td colspan="2">
                     <div class="inquiry-form__item">
-                        <input class="inquiry-form__item--input" type="text" name="address" value="{{ old('address') }}"/>
+                        <input class="inquiry-form__item--input" type="text" name="address" autocomplete = "off" value="{{ old('address') }}"/>
                     </div>
                 </td>
             </tr>
+            @if( $errors->has('address') )
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <div class="inquiry-form__item">
+                        <p class="inquiry-form__item--error">{{$errors->first('address')}}</p>
+                    </div>
+                </td>
+            </tr>
+            @endif
             <tr>
                 <td></td>
                 <td colspan="2">
@@ -120,6 +165,16 @@
                     </div>
                 </td>
             </tr>
+            @if( $errors->has('building') )
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <div class="inquiry-form__item">
+                        <p class="inquiry-form__item--error">{{$errors->first('building')}}</p>
+                    </div>
+                </td>
+            </tr>
+            @endif
             <tr>
                 <td></td>
                 <td colspan="2">
@@ -138,6 +193,17 @@
                     </div>
                 </td>
             </tr>
+            @if( $errors->has('opinion') )
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <div class="inquiry-form__item">
+                        <p class="inquiry-form__item--error">{{$errors->first('opinion')}}</p>
+                    </div>
+                </td>
+            </tr>
+            @endif
+
         </table>
         <button class="inquiry-form__button" type="submit">確認</button>
     </form>
