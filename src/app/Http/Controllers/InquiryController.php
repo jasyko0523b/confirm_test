@@ -13,31 +13,30 @@ class InquiryController extends Controller
         return view('inquiry');
     }
 
+    public function error(Request $request){
+        dd($request);
+        return view('error');
+    }
+
     public function confirm(OpinionRequest $request)
     {
-        $sei = $request->only(['sei']);
-        $mei = $request->only(['mei']);
-        $gender = $request->only(['gender']);
-        $email = $request->only(['email']);
-        $postcode = $request->only(['postcode']);
-        $address = $request->only(['address']);
-        $building_name = $request->only(['building_name']);
-        $opinion = $request->only(['opinion']);
-        $confirm = Opinion::create([
-            'fullname' => implode($sei)."　".implode($mei),
-            'gender' => (int)implode($gender),
-            'email' => implode($email),
-            'postcode' => implode($postcode),
-            'address' => implode($address),
-            'building_name' => implode($building_name),
-            'opinion' => implode($opinion)
-        ]);
+        $confirm = $request->all();
         return view('confirm', compact('confirm'));
     }
 
-    public function thanks(Request $request){
+    public function thanks(OpinionRequest $request)
+    {
+        $opinion=[
+            'fullname' => implode($request->only(['sei']))." ".implode($request->only(['mei'])),
+            'gender' => implode($request->only(['gender'])),
+            'email' => implode($request->only(['email'])),
+            'postcode' => mb_convert_kana(implode($request->only(['postcode'])), "na"),
+            'address' => mb_convert_kana(implode($request->only(['address'])), "na"),
+            'building_name' => mb_convert_kana(implode($request->only(['building_name'])), "na"),
+            'opinion' => implode($request->only(['opinion'])),
+        ];
+        Opinion::create($opinion);
         return view('thanks');
     }
-
 
 }

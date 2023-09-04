@@ -5,7 +5,7 @@
     text-align: center;
 }
 
-/* 入力フォーム全体の幅 */
+/* 確認フォーム全体の幅 */
 .confirm-form {
     margin: 0 auto;
     width: max(50vw, 400px);
@@ -13,41 +13,20 @@
 
 .confirm-form__table {
     width: 100%;
+    border-spacing: 10px;
 }
 
 .confirm-form__item {
+    margin: 10px;
+    padding: 5px;
     text-align: left;
-    vertical-align: top;
 }
 
 .confirm-form__item--header {
     margin: 0 5% 0 0;
     padding: 10px;
-    width: 30vw;
+    width: 150px;
     height: 40px;
-}
-
-.confirm-form__item--input{
-    padding: 10px;
-    background-color: #fff;
-    width: 100%;
-    height: 40px;
-    border: none;
-}
-
-.confirm-form__item--textarea {
-    padding: 10px;
-    width: 100%;
-    height: 100px;
-    border: none;
-    background-color: #fff;
-    resize: none;
-}
-
-
-.confirm-form__item--input:hover,
-.confirm-form__item--textarea:hover {
-    cursor: text;
 }
 
 /*************

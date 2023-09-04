@@ -15,14 +15,6 @@ class OpinionsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('opinions')->insert([
-            'fullname' => Str::random(10),
-            'gender'=>'1',
-            'email' => Str::random(10).'example.com',
-            'postcode'=>'123-4567',
-            'address' => Str::random(10),
-            'building_name' => Str::random(10),
-            'opinion' => Str::random(10),
-        ]);
+        //
     }
 }

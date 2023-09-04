@@ -16,7 +16,9 @@
                 </th>
                 <td>
                     <div class="confirm-form__item">
-                        <input class="confirm-form__item--input" type="text" name="fullname" value="{{ $confirm['fullname'] }}" disabled/>
+                        {{ $confirm['sei'] }} {{$confirm['mei']}}
+                        <input type="hidden" name="sei" value="{{ $confirm['sei'] }}"/>
+                        <input type="hidden" name="mei" value="{{ $confirm['mei'] }}"/>
                     </div>
                 </td>
             </tr>
@@ -26,10 +28,11 @@
                 </th>
                 <td>
                     <div class="confirm-form__item">
-                        @if ( $confirm['gender'] == "1")
-                            <input class="confirm-form__item--input" type="text" name="gender" value="男性" disabled/>
+                        <input type="hidden" name="gender" value="{{ $confirm['gender'] }}"/>
+                        @if ( $confirm['gender'] == "1" )
+                            男性
                         @else
-                            <input class="confirm-form__item--input" type="text" name="gender" value="女性" disabled/>
+                            女性
                         @endif
                     </div>
                 </td>
@@ -40,7 +43,8 @@
                 </th>
                 <td>
                     <div class="confirm-form__item">
-                        <input class="confirm-form__item--input" type="text" name="email" value="{{ $confirm['email'] }}" disabled/>
+                        {{ $confirm['email'] }}
+                        <input type="hidden" name="email" value="{{ $confirm['email'] }}"/>
                     </div>
                 </td>
             </tr>
@@ -50,7 +54,8 @@
                 </th>
                 <td colspan="2">
                     <div class="confirm-form__item">
-                        <input class="confirm-form__item--input" type="text" name="postcode" value="{{ $confirm['postcode'] }}" disabled/>
+                        {{ mb_convert_kana($confirm['postcode'], "na")}}
+                        <input type="hidden" name="postcode" value="{{ $confirm['postcode'] }}"/>
                     </div>
                 </td>
             </tr>
@@ -60,7 +65,8 @@
                 </th>
                 <td>
                     <div class="confirm-form__item">
-                        <input class="confirm-form__item--input" type="text" name="address" value="{{ $confirm['address'] }}" disabled/>
+                        {{ mb_convert_kana($confirm['address'], "na")}}
+                        <input type="hidden" name="address" value="{{ $confirm['address'] }}"/>
                     </div>
                 </td>
             </tr>
@@ -70,7 +76,8 @@
                 </th>
                 <td>
                     <div class="confirm-form__item">
-                        <input class="confirm-form__item--input" type="text" name="building_name" value="{{ $confirm['building_name'] }}" disabled/>
+                        {{ mb_convert_kana($confirm['building_name'], "na")}}
+                        <input type="hidden" name="building_name" value="{{ $confirm['building_name'] }}"/>
                     </div>
                 </td>
             </tr>
@@ -80,17 +87,14 @@
                 </th>
                 <td>
                     <div class="confirm-form__item">
-                        <textarea class="confirm-form__item--textarea" name="opinion" id="textarea" disabled>{{ $confirm['opinion'] }}</textarea>
+                        {{ $confirm['opinion'] }}
+                        <input type="hidden" name="opinion" value="{{ $confirm['opinion'] }}"/>
                     </div>
                 </td>
             </tr>
         </table>
-        <button class="confirm-form__button--fix"type="button" onClick="history.back()">修正する</button>
+        <button class="confirm-form__button--fix" type="button" onClick="history.back()">修正する</button>
         <button class="confirm-form__button--submit" type="submit">確認</button>
     </form>
 </div>
-@endsection
-
-@section('js')
-<script type="text/javascript" src="{{ asset('js/textarea-resize.js') }}"></script>
 @endsection

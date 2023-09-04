@@ -61,7 +61,7 @@
                 </tr>
             </table>
             <div class="search-form__button">
-                <button class="search-form__button--reset" type="reset">リセット</button>
+                <button class="search-form__button--reset" type="reset" onClick="location.href='/management'">リセット</button>
                 <button class="search-form__button--submit" type="submit">検索</button>
             </div>
         </form>
@@ -87,10 +87,10 @@
             </tr>
             @foreach($opinions as $opinion)
                 <tr>
-                    <td class="opinions__table--item small id">{{ $opinion['id'] }}</td>
-                    <td class="opinions__table--item">{{ str_replace('　', '', $opinion['fullname']) }}
+                    <td class="opinions__table--item id">{{ $opinion['id'] }}</td>
+                    <td class="opinions__table--item">{{ str_replace(' ', '', $opinion['fullname']) }}
                     </td>
-                    <td class="opinions__table--item small gender">
+                    <td class="opinions__table--item gender">
                         @if( $opinion['gender'] == '1' )
                             男性
                         @else
@@ -98,7 +98,7 @@
                         @endif
                     </td>
                     <td class="opinions__table--item">{{$opinion['email']}}</td>
-                    <td class="opinions__table--item">{{ Str::limit($opinion['opinion'], 50) }}</td>
+                    <td class="opinions__table--item opinion">{{ $opinion['opinion'] }}</td>
                     <td>
                         <form class="opinion__form--delete" action="/management/delete" method="post">
                         @method('DELETE')
@@ -113,4 +113,8 @@
         </table>
     </div>
 </div>
+@endsection
+
+@section('js')
+<script type="text/javascript" src="{{ asset('js/applyTextLimit.js') }}"></script>
 @endsection

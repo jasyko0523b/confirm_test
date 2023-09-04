@@ -17,27 +17,40 @@
 
 .inquiry-form__item {
     text-align: left;
+    vertical-align: baseline;
 }
 
 .inquiry-form__item--header {
     margin: 0 5% 0 0;
-    width: 40%;
+    position: relative;
+    top:10px;
+    width: 100%;
 }
 
 /* 必須項目 */
-.required::after {
+.required-mark::after {
     content: "※";
     color: #f00;
     font-size: 1em;
     margin-left: 0.3em;
 }
 
-.inquiry-form__item--input{
+.inquiry-form__item--input {
+    position: relative;
     padding: 10px;
     width: 100%;
     height: 40px;
     border: 1px solid #ddd;
     border-radius: 3px;
+    &.error{
+        background-color: #F0D0D0;
+        border: 1.5px solid #f00;
+    }
+}
+
+.inquiry-form__item--textarea.error {
+    background-color: #F0D0D0;
+    border: 1.5px solid #f00;
 }
 
 .inquiry-form__item--example {
@@ -46,7 +59,7 @@
 }
 
 .inquiry-form__item--radio {
-    margin: 15px 0;
+    margin: 10px 0;
     accent-color: #000;
     inline-size: 2rem;
     block-size: 2rem;
@@ -59,25 +72,27 @@
 
 .postcode--input {
     display: flex;
+    & label{
+        margin: 10px 15px;
+        text-align: center;
+    }
 }
-.postcode--input label{
-    margin: auto 15px;
-    text-align: center;
-    vertical-align: middle;
+.inquiry-form__item--postcode{
+    width: 100%;
 }
 
-.postcode--example,
-.postcode--error {
-    margin: auto 45px;
-}
 
 .inquiry-form__item--textarea {
     padding: 10px;
     width: 100%;
-    height: 100px;
+    min-height: 100px;
     border: 1px solid #ddd;
     border-radius: 3px;
     resize: none;
+    &.error {
+            background-color: #F0D0D0;
+            border: 1.5px solid #f00;
+        }
 }
 
 .inquiry-form__button {
@@ -94,5 +109,10 @@
 
 .inquiry-form__item--error {
     margin: 0;
-    color: red;
+    padding: 0;
+    color: #f00;
+    min-height: 1em;
+    height: 1em;
+    font-size: 12px;
 }
+
