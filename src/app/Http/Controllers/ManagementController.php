@@ -3,25 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Opinion;
+use App\Models\Contact;
 
 class ManagementController extends Controller
 {
     public function index()
     {
-        $opinions = Opinion::paginate(10);
+        $opinions = Contact::paginate(10);
         return view('management', compact('opinions'));
     }
 
     public function delete(Request $request)
     {
-        Opinion::find($request->id)->delete();
+        Contact::find($request->id)->delete();
         return redirect('/management');
     }
 
     public function search(Request $request){
 
-        $opinions = Opinion::NameSearch($request->name)
+        $opinions = Contact::NameSearch($request->name)
         ->GenderSearch($request->gender)
         ->CreatedAtSearch_start($request->start)
         ->CreatedAtSearch_end($request->end)

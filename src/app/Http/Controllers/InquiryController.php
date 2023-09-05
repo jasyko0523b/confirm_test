@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\OpinionRequest;
-use App\Models\Opinion;
+use App\Http\Requests\ContactRequest;
+use App\Models\Contact;
 
 class InquiryController extends Controller
 {
@@ -18,15 +18,15 @@ class InquiryController extends Controller
         return view('error');
     }
 
-    public function confirm(OpinionRequest $request)
+    public function confirm(ContactRequest $request)
     {
         $confirm = $request->all();
         return view('confirm', compact('confirm'));
     }
 
-    public function thanks(OpinionRequest $request)
+    public function thanks(ContactRequest $request)
     {
-        $opinion=[
+        $contact=[
             'fullname' => implode($request->only(['sei']))." ".implode($request->only(['mei'])),
             'gender' => implode($request->only(['gender'])),
             'email' => implode($request->only(['email'])),
@@ -35,7 +35,7 @@ class InquiryController extends Controller
             'building_name' => mb_convert_kana(implode($request->only(['building_name'])), "na"),
             'opinion' => implode($request->only(['opinion'])),
         ];
-        Opinion::create($opinion);
+        Contact::create($contact);
         return view('thanks');
     }
 

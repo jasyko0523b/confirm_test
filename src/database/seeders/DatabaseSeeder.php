@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Opinion;
+use App\Models\Contact;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,6 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Opinion::factory()->count(35)->create();
+        Contact::factory()->count(35)->create();
     }
 }

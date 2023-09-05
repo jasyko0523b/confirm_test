@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Opinion;
+use App\Models\Contact;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class OpinionFactory extends Factory
+class ContactFactory extends Factory
 {
-    protected $model = Opinion::class;
+    protected $model = Contact::class;
     /**
      * Define the model's default state.
      *

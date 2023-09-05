@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class OpinionRequest extends FormRequest
+class ContactRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,7 +27,7 @@ class OpinionRequest extends FormRequest
             'sei' => 'required | string | max:255',
             'mei' => 'required | string | max:255',
             'gender' => 'required',
-            'email' => 'required | email:filter | max:255',
+            'email' => 'required | email:filter',
             'postcode' => 'required | string | max:8',
             'address' => 'required | string | max:255',
             'building_name' => 'string | nullable | max:255',
